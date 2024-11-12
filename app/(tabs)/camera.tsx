@@ -6,7 +6,7 @@ import Camera from '@/components/Camera'
 export default function camera() {
   return (
     <View>
-      <Text>camera tabs</Text>
+      <Text>camera tabs test de carga por github</Text>
       <Camera></Camera>
     </View>
   )
