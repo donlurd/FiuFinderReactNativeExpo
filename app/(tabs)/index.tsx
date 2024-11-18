@@ -5,7 +5,7 @@ import { useState } from 'react';
 import Button from '@/components/Button';
 import ImageViewer from '@/components/ImageViewer';
 
-const PlaceholderImage = require('@/assets/images/background-image.png');
+const PlaceholderImage = require('@/assets/images/Fiu.jpg');
 
 export default function Index() {
   const [selectedImage, setSelectedImage] = useState<string | undefined>(undefined);
@@ -45,6 +45,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     flex: 1,
+    justifyContent: 'center',
   },
   footerContainer: {
     flex: 1 / 3,

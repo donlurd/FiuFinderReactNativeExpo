@@ -6,8 +6,9 @@ const TranslateScreen = () => {
   const [translatedText, setTranslatedText] = useState('');
 
   const translateText = async () => {
-    console.log('Texto ingresado:', inputText);
-    const apiKey = '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';
+    console.log('Texto ingresado:', inputText); // Log antes de enviar a la API
+
+    const apiKey = 'TU_API_KEY_DE_OPENAI';
     const prompt = `Traduce el siguiente texto al español: "${inputText}"`;
 
     try {
@@ -18,7 +19,7 @@ const TranslateScreen = () => {
           'Authorization': `Bearer ${apiKey}`
         },
         body: JSON.stringify({
-          model: "gpt-3.5-turbo-instruct", // Puedes cambiar el modelo si prefieres otro
+          model: "gpt-3.5-turbo-instruct", // Cambiado al modelo solicitado
           prompt: prompt,
           max_tokens: 100
         })
@@ -29,6 +30,7 @@ const TranslateScreen = () => {
       const data = await response.json();
       console.log('Datos JSON:', data);
 
+      // Verifica si 'choices' está definido y tiene al menos un elemento
       if (data.choices && data.choices.length > 0) {
         const translation = data.choices[0].text.trim();
         console.log('Texto traducido:', translation);
@@ -49,7 +51,10 @@ const TranslateScreen = () => {
         style={styles.input}
         placeholder="Ingresa el texto a traducir"
         value={inputText}
-        onChangeText={setInputText}
+        onChangeText={(text) => {
+          setInputText(text);
+          console.log('Texto actual:', text);
+        }}
       />
       <Button title="Traducir" onPress={translateText} />
       {translatedText ? (
