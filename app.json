@@ -1,5 +1,6 @@
 {
   "expo": {
+    "newArchEnabled": true,
     "name": "test",
     "slug": "test",
     "version": "1.0.0",
@@ -16,6 +17,7 @@
       "supportsTablet": true
     },
     "android": {
+      "newArchEnabled": true,
       "permissions": [
         "android.permission.SCHEDULE_EXACT_ALARM",
         "android.permission.CAMERA",
