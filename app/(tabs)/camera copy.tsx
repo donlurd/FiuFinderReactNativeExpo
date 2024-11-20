@@ -7,7 +7,7 @@ const TranslateScreen = () => {
 
   const translateText = async () => {
     console.log('Texto ingresado:', inputText);
-    const apiKey = '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';
+    const apiKey = "as"
     const prompt = `Traduce el siguiente texto al español: "${inputText}"`;
 
     try {
